@@ -1,0 +1,189 @@
+
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<title>Odliczanie do wakacji </title>
+	
+	<script type="text/javascript" >
+
+	
+	function odliczanie()
+	{
+		var dzisiaj = new Date();
+		
+		var dzien = dzisiaj.getDate();
+		if(dzien<10) dzien= "0"+ dzien;
+        var godzina = dzisiaj.getHours();
+		if(godzina<10) godzina= "0"+ godzina;
+        var minuta = dzisiaj.getMinutes();
+		if(minuta<10) minuta= "0"+ minuta;
+        var sekunda = dzisiaj.getSeconds();
+		if(sekunda<10) sekunda= "0"+ sekunda;
+		var miesiac = dzisiaj.getMonth()+1;
+		if(miesiac<10) miesiac= "0"+ miesiac;
+		var rok = dzisiaj.getFullYear();
+		if(rok<10) rok= "0"+ rok;
+		var milisekundy = dzisiaj.getTime();
+		
+		
+		var end = new Date("6/24/2022");
+		var endDzien = end.getDate();
+		if(endDzien<10) endDzien= "0"+ endDzien;
+		var endMiesiac = end.getMonth()+1;
+		if(endMiesiac<10) endMiesiac= "0"+ endMiesiac;
+		var endRok = end.getFullYear();
+		if(endRok<10) endRok= "0"+ endRok;
+		var milisekundy2 = end.getTime();
+		if(endDzien<10) endDzien= "0"+ endDzien;
+        var endgodzina = end.getHours();
+		if(endgodzina<10) endgodzina= "0"+ endgodzina;
+		
+		var pozostalo = milisekundy2 - milisekundy; 
+		var dni = Math.floor(pozostalo/86400000); 
+        var godzinydo = Math.floor(pozostalo/3600000);
+        var minutydo = Math.floor(pozostalo/60000);
+        var sekundydo = Math.floor(pozostalo/1000);
+		
+	
+		
+		document.getElementById("aktualnaData").innerHTML = "Aktualna data: "+dzien+"/"+miesiac+"/"+rok; 
+		document.getElementById("dataWydarzenia").innerHTML = "Data rozpoczęcia wakacji: "+endDzien+"/"+endMiesiac+"/"+endRok;
+		document.getElementById("dniDoWydarzenia").innerHTML = + dni+ " dni"
+		document.getElementById("godzinyDoWydarzenia").innerHTML = +godzinydo+" godzin"
+        document.getElementById("minutyDoWydarzenia").innerHTML = +minutydo+" minut"
+        document.getElementById("sekundyDoWydarzenia").innerHTML = +sekundydo+" sekund"
+         setTimeout("odliczanie()",1000);
+	}
+	
+	</script>
+
+	
+    <style>
+body
+{
+background-color: 	#4e656e;
+font-family: 'Verdana';
+font-size: 25px;
+color: rgb(76, 0, 255);
+}
+#container
+{
+	padding-top: 50px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom:50px;
+	background-color: #bedde9;
+	margin: auto;
+    width: 1000px;
+}
+#aktualnaData
+{
+	  text-align: center;
+	  color: #2999c5;
+    border: 3px solid #48bd4e;
+}
+#dniDoWydarzenia
+{
+	  text-align: center;
+	  color: #251f3b;
+    border: 3px solid rgb(204, 52, 52);
+}
+#doWydarzenia
+{
+	  text-align: center;
+	  
+    border: 3px solid #808080;
+}
+
+#dataWydarzenia
+{
+	  text-align: center;
+	  color: #2999c5;
+    border: 3px solid #48bd4e;
+}
+
+#description
+{
+	text-align: center;
+	border: 3px solid #808080;
+}
+
+#footer
+{
+	color: #251f3b;
+	margin-top: 50px;
+	padding: 10px;
+	font-size: 12px;
+	text-align: center;
+    border: 3px solid blue;
+	letter-spacing: 3px;
+}
+#topBar
+{
+	
+	color: #251f3b;
+
+	text-align: center;
+    border: 3px solid rgb(204, 52, 52);
+	margin-bottom: 50px;
+}
+#gora{
+	
+	color: #0e0bdb;
+	padding: 10px;
+	font-size: 18px;
+	text-align: center;
+    border: 3px solid rgb(90, 4, 64);
+	letter-spacing: 3px;
+	margin-bottom: 50px;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<div id="gora">
+		<h1><strong><i>Odliczanie do wakacji</i></strong></h1></div>
+			
+		
+		
+			<br/>
+				<div id="aktualnaData">...</div> 
+				<br/>
+				<br/>
+			<div id="dataWydarzenia">...</div>
+		
+			<br/>
+			<br/>
+			<center>
+		   Pozostało:</center>
+		   <br/> 
+			<div id="dniDoWydarzenia">...</div>
+			<center></br></br>
+			Czyli inaczej:</center>
+			
+			</br>
+			<div id="topBar">
+			<div id="godzinyDoWydarzenia">...</div>
+		</div>
+			
+	
+		
+			<div id="topBar">
+			<div id="minutyDoWydarzenia">...</div>
+		</div>
+			
+			
+			
+			<div id="topBar">
+			<div id="sekundyDoWydarzenia">...</div>
+		</div>
+			<script type="text/javascript" >
+			odliczanie();
+		</script>
+
+</center>
+</div>
+</div>
+</body>
+</html>
